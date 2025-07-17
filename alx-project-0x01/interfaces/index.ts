@@ -17,7 +17,11 @@ export interface PostModalProps {
   onSubmit: (post: PostData) => void;
 }
 
-// Address & Company types reused in UserProps and UserData
+export interface UserModalProps {
+  onClose: () => void;
+  onSubmit: (post: UserProps) => void;
+}
+
 export interface Geo {
   lat: string;
   lng: string;
@@ -48,7 +52,7 @@ export interface UserProps {
   company: Company;
 }
 
-// ✅ UserData now allows address & company as optional
+
 export interface UserData {
   id?: number;
   name: string;
@@ -58,9 +62,4 @@ export interface UserData {
   website?: string;
   address?: Address;
   company?: Company;
-}
-
-export interface UserModalProps {
-  onClose: () => void;
-  onSubmit: (user: UserData) => void;
 }
